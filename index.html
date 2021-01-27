@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LearnVueJS</title>
+</head>
+<body>
+    <div id="app">
+        <!-- ... -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        // vm(ViewModel의 약자)
+        var vm = new Vue({ //new Vue를 통해 만들어진 루트 Vue 인스턴스
+        //Vue 인스턴스를 생성할 때는 options 객체를 전달
+            el : '#app', //el(element)
+            data : {
+                message : 'hi'
+            }
+        });
+    </script>
+</body>
+</html>
