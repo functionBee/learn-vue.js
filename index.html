@@ -7,16 +7,24 @@
 </head>
 <body>
     <div id="app">
-        <!-- ... -->
+        <app-header></app-header>
+        <app-content></app-content>
+        <app-footer></app-footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
-        // vm(ViewModel의 약자)
-        var vm = new Vue({ //new Vue를 통해 만들어진 루트 Vue 인스턴스
-        //Vue 인스턴스를 생성할 때는 options 객체를 전달
-            el : '#app', //el(element)
-            data : {
-                message : 'hi'
+        var vm = new Vue({ 
+            el : '#app',
+            components:{
+                'app-header': {
+                    template : '<header>Header</header>'
+                },
+                'app-content': {
+                    template : '<main>Content</main>'
+                },
+                'app-footer': {
+                    template : '<footer>Footer</footer>'
+                }
             }
         });
     </script>
