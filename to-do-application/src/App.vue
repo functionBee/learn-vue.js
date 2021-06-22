@@ -30,7 +30,7 @@ export default {
 body{
   color: #333;
   text-align: center;
-  background-color: #fff;
+  background-color: rgb(220, 220, 220);
 }
 
 #app {
@@ -45,6 +45,35 @@ input{
 }
 
 button{
-  border-style: groove;
+  border-style: none;
 }
+
+ul{
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 0;
+    text-align: left;
+}
+li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 50px;
+    height: 50px;
+    line-height: 50px;
+    margin: .3rem 0;
+    background: #fff;
+    border-radius: 5px;
+}
+
+/* input */
+.input_box{margin: 20px auto;display: -ms-flexbox;display: -webkit-flex;display: flex;align-items: center;justify-content: flex-start;width: 100%;}
+.input_box input[type="text"]{width: 100%;padding: 12px 13px;height: 40px;margin-right: 3px;border: 1px solid #ddd;box-sizing: border-box;border-radius: 3px;}
+.input_box input[type="text"]::placeholder{font-size: 1rem;font-weight: 400;color: #BCBCBC;letter-spacing: -.16px;}
+.input_box input[type="text"]:-ms-input-placeholder {font-size: 1rem;font-weight: 400;color: #BCBCBC;letter-spacing: -.16px;}
+
+/* button */
+.btn{display: inline-block;font-size: 1rem;color: #fff;text-align: center;text-decoration: none;vertical-align: middle;border:none;cursor: pointer;}
+
+  
 </style>

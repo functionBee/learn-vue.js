@@ -14,6 +14,7 @@
 export default {
     data: function(){
         return{
+            // 새롭게 입력되는 텍스트
             newTodoItem: ""
         }
     },
@@ -23,10 +24,10 @@ export default {
             // this = TodoInput 컴포넌트
         
             // 저장 로직
-            localStorage.setItem[this.newTodoItem, this.newTodoItem];
+            localStorage.setItem(this.newTodoItem, this.newTodoItem);
             // localStorage.setItem();
+            // Reference >> localStorage 
             // https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
-
             this.clearInput();
         },
         clearInput: function(){
@@ -38,13 +39,5 @@ export default {
 </script>
 
 <style scoped>
-/* input */
-.input_box{margin: 20px auto;display: -ms-flexbox;display: -webkit-flex;display: flex;align-items: center;justify-content: flex-start;width: 100%;}
-.input_box input[type="text"]{width: 100%;padding: 12px 13px;height: 40px;margin-right: 3px;border: 1px solid #ddd;box-sizing: border-box;border-radius: 3px;}
-.input_box input[type="text"]::placeholder{font-size: 1rem;font-weight: 400;color: #BCBCBC;letter-spacing: -.16px;}
-.input_box input[type="text"]:-ms-input-placeholder {font-size: 1rem;font-weight: 400;color: #BCBCBC;letter-spacing: -.16px;}
-
-/* button */
-.btn{display: inline-block;font-size: 1rem;color: #fff;text-align: center;text-decoration: none;vertical-align: middle;border:none;cursor: pointer;}
 .btn_add{padding: 11px 5px;border-radius: 3px;background: linear-gradient(to right, #6478fb, #8763fb);}
 </style>
