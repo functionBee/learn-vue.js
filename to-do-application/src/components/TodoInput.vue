@@ -2,7 +2,7 @@
     <div class="input_box">
         <input type="text" v-model="newTodoItem" v-on:keyup.enter="addTodo">
         <button class="btn btn_add" v-on:click="addTodo">
-            ADD
+            <i class="im im-plus-circle"></i>
         </button>
     </div> 
 </template>
@@ -39,5 +39,9 @@ export default {
 </script>
 
 <style scoped>
-.btn_add{padding: 11px 5px;border-radius: 3px;background: linear-gradient(to right, #6478fb, #8763fb);}
+.btn_add{
+    padding: 11px 11px;
+    background: linear-gradient(to right, #6478fb, #8763fb);
+    border-radius: 0 30px 30px 0 ;
+}
 </style>

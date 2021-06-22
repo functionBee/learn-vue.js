@@ -2,8 +2,9 @@
     <div>
         <ul>
             <li v-for="(todoItem, index) in todoItems" v-bind:key="todoItem">
+                <span class="btn_check"><i class="im im-check-mark-circle-o" v-on:click="toggleComplete"></i></span>
                 {{ todoItem }}
-                <button class="btn_remove" v-on:click="removeTodo(todoItem, index)">Delete</button>
+                <button class="btn_remove" v-on:click="removeTodo(todoItem, index)"><i class="im im-x-mark-circle-o"></i></button>
             </li>
         </ul>
     </div>
@@ -21,9 +22,12 @@ export default {
             // console.log(todoItem, index);
             localStorage.removeItem(todoItem);
             this.todoItems.splice(index, 1);
+        },
+        toggleComplete: function(){
+
         }
     },
-    // vue lifecycle 
+    // vue lifecycle
     // https://vuejs.org/v2/guide/instance.html
     // https://v3.vuejs.org/api/options-lifecycle-hooks.html
     created: function(){
@@ -40,25 +44,5 @@ export default {
 </script>
 
 <style scoped>
-.btn_remove{
-    padding: 11px 11px;
-    font-weight: 600;
-    color: #f1f1f1;
-    background: #414141;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-.btn_check{
-    margin-right: 5px;
-    line-height: 45px;
-    color: #24054e;
-}
-
-.btn_completed{
-    margin-left: auto;
-    margin-right: auto;
-    color: #055eb1;
-}
 
 </style>
