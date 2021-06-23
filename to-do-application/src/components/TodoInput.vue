@@ -20,15 +20,18 @@ export default {
     },
     methods:{
         addTodo: function(){
-            console.log(this.newTodoItem);
-            // this = TodoInput 컴포넌트
-        
-            // 저장 로직
-            localStorage.setItem(this.newTodoItem, this.newTodoItem);
-            // localStorage.setItem();
-            // Reference >> localStorage 
-            // https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
-            this.clearInput();
+            if(this.newTodoItem !== ''){
+                var obj = {completed: false, item: this.newTodoItem};
+                // console.log(this.newTodoItem);
+                // this = TodoInput 컴포넌트
+            
+                // 저장 로직
+                localStorage.setItem(this.newTodoItem, JSON.stringify(obj));
+                // localStorage.setItem();
+                // Reference >> localStorage 
+                // https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+                this.clearInput();
+            }
         },
         clearInput: function(){
             // 초기화 로직
@@ -41,6 +44,7 @@ export default {
 <style scoped>
 .btn_add{
     padding: 11px 11px;
+    height: 59.57px;
     background: linear-gradient(to right, #6478fb, #8763fb);
     border-radius: 0 30px 30px 0 ;
 }

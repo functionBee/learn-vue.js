@@ -1,10 +1,12 @@
 <template>
     <div>
         <ul>
-            <li v-for="(todoItem, index) in todoItems" v-bind:key="todoItem">
-                <span class="btn_check"><i class="im im-check-mark-circle-o" v-on:click="toggleComplete"></i></span>
-                {{ todoItem }}
-                <button class="btn_remove" v-on:click="removeTodo(todoItem, index)"><i class="im im-x-mark-circle-o"></i></button>
+            <li v-for="(todoItem, index) in todoItems" v-bind:key="todoItem.item">
+                <i class="im im-check-mark" 
+                   v-bind:class="{btn_completed: todoItem.completed}" 
+                   v-on:click="toggleComplete(todoItem, index)"></i>
+                <span v-bind:class="{text_completed: todoItem.completed}">{{ todoItem.item }}</span>
+                <button class="btn_remove" v-on:click="removeTodo(todoItem, index)"><i class="im im-trash-can"></i></button>
             </li>
         </ul>
     </div>
@@ -23,8 +25,8 @@ export default {
             localStorage.removeItem(todoItem);
             this.todoItems.splice(index, 1);
         },
-        toggleComplete: function(){
-
+        toggleComplete: function(todoItem, index){
+            console.log(todoItem);
         }
     },
     // vue lifecycle
@@ -34,7 +36,8 @@ export default {
         if(localStorage.length > 0){
             for(var i = 0; i < localStorage.length ; i++){
                 if(localStorage.key(i) !== 'loglevel:-webpack-dev-server'){
-                    this.todoItems.push(localStorage.key(i));
+                    // this.todoItems.push(localStorage.key(i));
+                    this.todoItems.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
                     // console.log(localStorage.key[i]);
                 }
             }
@@ -44,5 +47,11 @@ export default {
 </script>
 
 <style scoped>
-
+.btn_completed{
+    color: #ddd;
+}
+.text_completed{
+    text-decoration: line-through;
+    color: #ddd;
+}
 </style>

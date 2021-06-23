@@ -72,7 +72,7 @@ i{
 
 /* input */
 .input_box{margin: 20px auto;display: -ms-flexbox;display: -webkit-flex;display: flex;align-items: center;justify-content: flex-start;width: 100%;}
-.input_box input[type="text"]{width: 100%;padding: 11px 11px;height: 47px;margin-right: 3px;border: 1px solid #ddd;box-sizing: border-box;background-color: #fff;border-radius: 30px 0 0 30px ;}
+.input_box input[type="text"]{width: 100%;padding: 11px 11px;height: 59.57px;margin-right: 3px;border: 1px solid #ddd;box-sizing: border-box;background-color: #fff;border-radius: 30px 0 0 30px ;}
 .input_box input[type="text"]::placeholder{font-size: 1rem;font-weight: 400;color: #BCBCBC;letter-spacing: -.16px;}
 .input_box input[type="text"]:-ms-input-placeholder {font-size: 1rem;font-weight: 400;color: #BCBCBC;letter-spacing: -.16px;}
 
