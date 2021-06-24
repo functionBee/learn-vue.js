@@ -2,11 +2,15 @@
     <div>
         <ul>
             <li v-for="(todoItem, index) in todoItems" v-bind:key="todoItem.item">
-                <i class="im im-check-mark" 
-                   v-bind:class="{btn_completed: todoItem.completed}" 
-                   v-on:click="toggleComplete(todoItem, index)"></i>
+                <button
+                    v-bind:class="{btn_completed: todoItem.completed}" 
+                    v-on:click="toggleComplete(todoItem, index)">
+                    <i class="im im-check-mark"></i>
+                </button>
                 <span v-bind:class="{text_completed: todoItem.completed}">{{ todoItem.item }}</span>
-                <button class="btn_remove" v-on:click="removeTodo(todoItem, index)"><i class="im im-trash-can"></i></button>
+                <button class="btn_remove" v-on:click="removeTodo(todoItem, index)">
+                    <i class="im im-trash-can"></i>
+                </button>
             </li>
         </ul>
     </div>
@@ -26,7 +30,13 @@ export default {
             this.todoItems.splice(index, 1);
         },
         toggleComplete: function(todoItem, index){
-            console.log(todoItem);
+            console.log(todoItem, index);
+
+            todoItem.completed =! todoItem.completed;
+
+            // 로커스토리지 갱신
+            localStorage.removeItem(todoItem.item)
+            localStorage.setItem(todoItem.item, JSON.stringify(todoItem))
         }
     },
     // vue lifecycle
@@ -35,7 +45,7 @@ export default {
     created: function(){
         if(localStorage.length > 0){
             for(var i = 0; i < localStorage.length ; i++){
-                if(localStorage.key(i) !== 'loglevel:-webpack-dev-server'){
+                if(localStorage.key(i) !== 'loglevel:webpack-dev-server'){
                     // this.todoItems.push(localStorage.key(i));
                     this.todoItems.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
                     // console.log(localStorage.key[i]);
@@ -50,6 +60,7 @@ export default {
 .btn_completed{
     color: #ddd;
 }
+
 .text_completed{
     text-decoration: line-through;
     color: #ddd;

@@ -8,6 +8,7 @@
 </template>
 
 <script>
+
 // v-model
 // https://vuejs.org/v2/guide/forms.html
 
@@ -42,10 +43,13 @@ export default {
 </script>
 
 <style scoped>
+
 .btn_add{
     padding: 11px 11px;
     height: 59.57px;
     background: linear-gradient(to right, #6478fb, #8763fb);
-    border-radius: 0 30px 30px 0 ;
+    border-radius: 0 5px 5px 0 ;
+
 }
+
 </style>
