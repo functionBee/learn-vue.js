@@ -3,7 +3,8 @@
     <!-- 스타일 가이드에서는 템플릿에서 케밥 기법을 권고 -->
     <TodoHeader></TodoHeader>
     <TodoInput></TodoInput>
-    <TodoList></TodoList>
+    <!-- <TodoList v-bind: 내려 보낼 프롭스 속성 = "현재 위치의 컴포넌트 데이터 속성"></TodoList> -->
+    <TodoList v-bind:propsdata="todoItems"></TodoList>
     <TodoFooter></TodoFooter>
   </div>
 </template>
@@ -16,6 +17,23 @@ import TodoList from './components/TodoList.vue';
 import TodoFooter from './components/TodoFooter.vue';
 
 export default {
+  data: function(){
+      return{
+          todoItems: [],
+      }
+  },
+  // vue lifecycle
+  // https://vuejs.org/v2/guide/instance.html
+  // https://v3.vuejs.org/api/options-lifecycle-hooks.html
+  created: function(){
+        if(localStorage.length > 0){
+            for(var i = 0; i < localStorage.length ; i++){
+                if(localStorage.key(i) !== 'loglevel:webpack-dev-server'){
+                    this.todoItems.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
+                }
+            }
+        }
+  },
   components: {
     // 컴포넌트 태그명 : 컴포넌트 내용(파스칼케이스)
     'TodoHeader': TodoHeader,
