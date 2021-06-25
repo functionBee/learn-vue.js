@@ -12,7 +12,7 @@ export default {
 
 
 <style scoped>
-/* ÇØ´ç ÄÄÆ÷³ÍÆ®¿¡¼­¸¸ À¯È¿ÇÑ ½ºÅ¸ÀÏ ÁöÁ¤½Ã scope Ãß°¡ */
+/* í•´ë‹¹ ì»´í¬ë„ŒíŠ¸ì—ì„œë§Œ ìœ íš¨í•œ ìŠ¤íƒ€ì¼ ì§€ì •ì‹œ scope ì¶”ê°€ */
 .title{
     margin: 2.5rem 0 1.5rem;
     font-weight: 900;

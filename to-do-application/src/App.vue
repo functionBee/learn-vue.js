@@ -1,15 +1,14 @@
 <template>
   <div id="app">
-    <!-- ½ºÅ¸ÀÏ °¡ÀÌµå¿¡¼­´Â ÅÛÇÃ¸´¿¡¼­ ÄÉ¹ä ±â¹ıÀ» ±Ç°í -->
+    <!-- ìŠ¤íƒ€ì¼ ê°€ì´ë“œì—ì„œëŠ” í…œí”Œë¦¿ì—ì„œ ì¼€ë°¥ ê¸°ë²•ì„ ê¶Œê³  -->
     <TodoHeader></TodoHeader>
-    <!-- <TodoInput v-on:ÇÏÀ§ÄÄÆ÷³ÍÆ®¿¡¼­ ¹ß»ı½ÃÅ² ÀÌº¥Æ® ÀÌ¸§ = "ÇöÀç ÄÄÆ÷³ÍÆ®ÀÇ ¸Ş¼Òµå ¸í"></TodoInput> -->
+    <!-- <TodoInput v-on:í•˜ìœ„ì»´í¬ë„ŒíŠ¸ì—ì„œ ë°œìƒì‹œí‚¨ ì´ë²¤íŠ¸ ì´ë¦„ = "í˜„ì¬ ì»´í¬ë„ŒíŠ¸ì˜ ë©”ì†Œë“œ ëª…"></TodoInput> -->
     <TodoInput v-on:addTodoItem = "addOneItem"></TodoInput>
-    <!-- <TodoList v-bind: ³»·Á º¸³¾ ÇÁ·Ó½º ¼Ó¼º = "ÇöÀç À§Ä¡ÀÇ ÄÄÆ÷³ÍÆ® µ¥ÀÌÅÍ ¼Ó¼º"></TodoList> -->
-    <TodoList v-bind:propsdata="todoItems" v-on:removeItem="removeOneItem"></TodoList>
-    <TodoFooter></TodoFooter>
+    <!-- <TodoList v-bind: ë‚´ë ¤ ë³´ë‚¼ í”„ë¡­ìŠ¤ ì†ì„± = "í˜„ì¬ ìœ„ì¹˜ì˜ ì»´í¬ë„ŒíŠ¸ ë°ì´í„° ì†ì„±"></TodoList> -->
+    <TodoList v-bind:propsdata="todoItems" v-on:removeItem="removeOneItem" v-on:toggleItem="toggleOneItem"></TodoList>
+    <TodoFooter v-on:clearAll="clearAllItems"></TodoFooter>
   </div>
 </template>
-
 <script>
 
 import TodoHeader from './components/TodoHeader.vue';
@@ -27,9 +26,9 @@ export default {
     addOneItem: function(todoItem){
       var obj = {completed: false, item: todoItem};
         // console.log(this.newTodoItem);
-        // this = TodoInput ÄÄÆ÷³ÍÆ®
+        // this = TodoInput ì»´í¬ë„ŒíŠ¸
     
-        // ÀúÀå ·ÎÁ÷
+        // ì €ì¥ ë¡œì§
         localStorage.setItem(todoItem, JSON.stringify(obj));
         // localStorage.setItem();
         // Reference >> localStorage 
@@ -39,6 +38,17 @@ export default {
     removeOneItem: function(todoItem, index){
         localStorage.removeItem(todoItem.item);
         this.todoItems.splice(index, 1);
+    },
+    toggleOneItem: function(todoItem, index){
+          this.todoItems[index].completed = !this.todoItems[index].completed;
+
+          // ë¡œì»¤ìŠ¤í† ë¦¬ì§€ì˜ ë°ì´í„°ë¥¼ ê°±ì‹ 
+          localStorage.removeItem(todoItem.item)
+          localStorage.setItem(todoItem.item, JSON.stringify(todoItem))
+    },
+    clearAllItems: function(){
+        localStorage.clear(); 
+        this.todoItems = [];
     }
   },
   // vue lifecycle
@@ -54,7 +64,7 @@ export default {
         }
   },
   components: {
-    // ÄÄÆ÷³ÍÆ® ÅÂ±×¸í : ÄÄÆ÷³ÍÆ® ³»¿ë(ÆÄ½ºÄ®ÄÉÀÌ½º)
+    // ì»´í¬ë„ŒíŠ¸ íƒœê·¸ëª… : ì»´í¬ë„ŒíŠ¸ ë‚´ìš©(íŒŒìŠ¤ì¹¼ì¼€ì´ìŠ¤)
     'TodoHeader': TodoHeader,
     'TodoInput': TodoInput,
     'TodoList': TodoList,

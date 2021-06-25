@@ -15,7 +15,7 @@
 export default {
     data: function(){
         return{
-            // »õ·Ó°Ô ÀÔ·ÂµÇ´Â ÅØ½ºÆ®
+            // ìƒˆë¡­ê²Œ ì…ë ¥ë˜ëŠ” í…ìŠ¤íŠ¸
             newTodoItem: ""
         }
     },
@@ -27,7 +27,7 @@ export default {
             }
         },
         clearInput: function(){
-            // ÃÊ±âÈ­ ·ÎÁ÷
+            // ì´ˆê¸°í™” ë¡œì§
             this.newTodoItem = '';
         }
     }
