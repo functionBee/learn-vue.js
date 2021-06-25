@@ -22,15 +22,7 @@ export default {
     methods:{
         addTodo: function(){
             if(this.newTodoItem !== ''){
-                var obj = {completed: false, item: this.newTodoItem};
-                // console.log(this.newTodoItem);
-                // this = TodoInput 컴포넌트
-            
-                // 저장 로직
-                localStorage.setItem(this.newTodoItem, JSON.stringify(obj));
-                // localStorage.setItem();
-                // Reference >> localStorage 
-                // https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+                this.$emit('addTodoItem', this.newTodoItem)
                 this.clearInput();
             }
         },

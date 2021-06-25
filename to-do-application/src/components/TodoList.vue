@@ -21,13 +21,9 @@ export default {
     props: ['propsdata'],
     methods:{
         removeTodo: function(todoItem, index){
-            // console.log(todoItem, index);
-            localStorage.removeItem(todoItem);
-            this.todoItems.splice(index, 1);
+            this.$emit('removeItem', todoItem, index);
         },
-        toggleComplete: function(todoItem, index){
-            console.log(todoItem, index);
-
+        toggleComplete: function(todoItem){
             todoItem.completed =! todoItem.completed;
 
             // 로커스토리지 갱신
