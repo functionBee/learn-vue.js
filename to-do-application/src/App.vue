@@ -25,9 +25,6 @@ export default {
   methods:{
     addOneItem: function(todoItem){
       var obj = {completed: false, item: todoItem};
-        // console.log(this.newTodoItem);
-        // this = TodoInput 컴포넌트
-    
         // 저장 로직
         localStorage.setItem(todoItem, JSON.stringify(obj));
         // localStorage.setItem();
