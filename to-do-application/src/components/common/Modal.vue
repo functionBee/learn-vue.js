@@ -3,23 +3,30 @@
         <div class="modal-mask">
             <div class="modal-wrapper">
                 <div class="modal-container">
+                    <!-- .modal-header -->
                     <div class="modal-header">
                         <slot name="header">
                             default header
                         </slot>
                     </div>
+                    <!-- //.modal-header -->
+
+                    <!-- .modal-body -->
                     <div class="modal-body">
                         <slot name="body">
                             default body
                         </slot>
                     </div>
+                    <!-- //.modal-body -->
+
+                    <!-- .modal-footer -->
                     <div class="modal-footer">
                         <slot name="footer">
                             default footer
-
-                            <buttton class="modal-default-button"></buttton>
+                            <buttton class="modal-default-button" @click="$emit('close')">ok</buttton>
                         </slot>
                     </div>
+                    <!-- //.modal-footer -->
                 </div>
             </div>
         </div>
@@ -74,7 +81,6 @@ export default {
 .modal-default-button {
     float: right;
 }
-
 
 .modal-enter {
     opacity: 0;

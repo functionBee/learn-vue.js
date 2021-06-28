@@ -4,11 +4,15 @@
         <button class="btn btn_add" v-on:click="addTodo">
             <i class="im im-plus-circle"></i>
         </button>
+
         <!-- Modal Component -->
         <Modal v-if="showModal" @close="showModal = false">
-            <h3 slot="header">custom header</h3>
+            <h3 slot="header">경고!</h3>
+            <p slot="body">아무것도 입력하지 않으셨습니다.</p>
+            <div slot="footer"></div>
         </Modal>
         <!-- //Modal Component -->
+    
     </div> 
 </template>
 
@@ -22,7 +26,8 @@ export default {
     data: function(){
         return{
             // 새롭게 입력되는 텍스트
-            newTodoItem: ""
+            newTodoItem: "",
+            showModal: false
         }
     },
     methods:{
@@ -30,6 +35,8 @@ export default {
             if(this.newTodoItem !== ''){
                 this.$emit('addTodoItem', this.newTodoItem)
                 this.clearInput();
+            }else{
+                this.showModal = !this.showModal;
             }
         },
         clearInput: function(){
