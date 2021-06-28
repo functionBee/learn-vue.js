@@ -4,10 +4,16 @@
         <button class="btn btn_add" v-on:click="addTodo">
             <i class="im im-plus-circle"></i>
         </button>
+        <!-- Modal Component -->
+        <Modal v-if="showModal" @close="showModal = false">
+            <h3 slot="header">custom header</h3>
+        </Modal>
+        <!-- //Modal Component -->
     </div> 
 </template>
 
 <script>
+import Modal from './common/Modal.vue'
 
 // v-model
 // https://vuejs.org/v2/guide/forms.html
@@ -30,6 +36,9 @@ export default {
             // 초기화 로직
             this.newTodoItem = '';
         }
+    },
+    components: {
+        Modal: Modal
     }
 }
 </script>
