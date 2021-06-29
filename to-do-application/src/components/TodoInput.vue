@@ -7,7 +7,10 @@
 
         <!-- Modal Component -->
         <Modal v-if="showModal" @close="showModal = false">
-            <h3 slot="header">경고!</h3>
+            <h3 slot="header">
+                경고!
+                <button class="modal-close" @click="showModal = false"><i class="im im-x-mark-circle"></i></button> 
+            </h3>
             <p slot="body">아무것도 입력하지 않으셨습니다.</p>
             <div slot="footer"></div>
         </Modal>
@@ -58,6 +61,11 @@ export default {
     background: linear-gradient(to right, #6478fb, #8763fb);
     border-radius: 0 5px 5px 0 ;
 
+}
+
+.modal-close{
+    vertical-align: top;
+    color : #42b942
 }
 
 </style>

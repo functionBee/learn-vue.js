@@ -1,6 +1,6 @@
 <template>
     <div>
-        <ul>
+        <transition-group name="list" tag="ul">
             <li v-for="(todoItem, index) in propsdata" v-bind:key="todoItem.item">
                 <button
                     v-bind:class="{btn_completed: todoItem.completed}" 
@@ -12,7 +12,7 @@
                     <i class="im im-trash-can"></i>
                 </button>
             </li>
-        </ul>
+        </transition-group>
     </div>
 </template>
 
@@ -39,4 +39,18 @@ export default {
     text-decoration: line-through;
     color: #ddd;
 }
+
+/* list item transition effect */
+/* https://vuejs.org/v2/guide/transitions.html */
+.list-enter-active, 
+.list-leave-active {
+    transition: all .7s;
+}
+
+.list-enter, 
+.list-leave-to {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
 </style>
