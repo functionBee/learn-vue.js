@@ -26,7 +26,7 @@ import Modal from './common/Modal.vue'
 // https://vuejs.org/v2/guide/forms.html
 
 export default {
-    data: function(){
+    data(){
         return{
             // 새롭게 입력되는 텍스트
             newTodoItem: "",
@@ -34,7 +34,7 @@ export default {
         }
     },
     methods:{
-        addTodo: function(){
+        addTodo(){
             if(this.newTodoItem !== ''){
                 this.$emit('addTodoItem', this.newTodoItem)
                 this.clearInput();
@@ -42,7 +42,7 @@ export default {
                 this.showModal = !this.showModal;
             }
         },
-        clearInput: function(){
+        clearInput(){
             // 초기화 로직
             this.newTodoItem = '';
         }

@@ -17,13 +17,13 @@ import TodoList from './components/TodoList.vue';
 import TodoFooter from './components/TodoFooter.vue';
 
 export default {
-  data: function(){
+  data(){
       return{
           todoItems: [],
       }
   },
   methods:{
-    addOneItem: function(todoItem){
+    addOneItem(todoItem){
       const obj = {completed: false, item: todoItem};
         // 저장 로직
         localStorage.setItem(todoItem, JSON.stringify(obj));
@@ -32,18 +32,18 @@ export default {
         // https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
         this.todoItems.push(obj);
     },
-    removeOneItem: function(todoItem, index){
+    removeOneItem(todoItem, index){
         localStorage.removeItem(todoItem.item);
         this.todoItems.splice(index, 1);
     },
-    toggleOneItem: function(todoItem, index){
+    toggleOneItem(todoItem, index){
           this.todoItems[index].completed = !this.todoItems[index].completed;
 
           // 로컬스토리지의 데이터를 갱신
           localStorage.removeItem(todoItem.item)
           localStorage.setItem(todoItem.item, JSON.stringify(todoItem))
     },
-    clearAllItems: function(){
+    clearAllItems(){
         localStorage.clear(); 
         this.todoItems = [];
     }
@@ -51,7 +51,7 @@ export default {
   // vue lifecycle
   // https://vuejs.org/v2/guide/instance.html
   // https://v3.vuejs.org/api/options-lifecycle-hooks.html
-  created: function(){
+  created(){
         if(localStorage.length > 0){
             for(let i = 0; i < localStorage.length ; i++){
                 if(localStorage.key(i) !== 'loglevel:webpack-dev-server'){
