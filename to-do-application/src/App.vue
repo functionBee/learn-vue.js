@@ -24,7 +24,7 @@ export default {
   },
   methods:{
     addOneItem: function(todoItem){
-      var obj = {completed: false, item: todoItem};
+      const obj = {completed: false, item: todoItem};
         // 저장 로직
         localStorage.setItem(todoItem, JSON.stringify(obj));
         // localStorage.setItem();
@@ -39,7 +39,7 @@ export default {
     toggleOneItem: function(todoItem, index){
           this.todoItems[index].completed = !this.todoItems[index].completed;
 
-          // 로커스토리지의 데이터를 갱신
+          // 로컬스토리지의 데이터를 갱신
           localStorage.removeItem(todoItem.item)
           localStorage.setItem(todoItem.item, JSON.stringify(todoItem))
     },
@@ -53,7 +53,7 @@ export default {
   // https://v3.vuejs.org/api/options-lifecycle-hooks.html
   created: function(){
         if(localStorage.length > 0){
-            for(var i = 0; i < localStorage.length ; i++){
+            for(let i = 0; i < localStorage.length ; i++){
                 if(localStorage.key(i) !== 'loglevel:webpack-dev-server'){
                     this.todoItems.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
                 }
@@ -84,7 +84,21 @@ body{
   margin-top: 60px;
 }
 
-button, input, select, textarea{border-radius:0;border:none;background:0 0;-webkit-appearance:none;-moz-appearance: none;appearance: none;outline: none;text-decoration: none;cursor: pointer;-webkit-text-size-ajust:none;}
+button, 
+input, 
+select, 
+textarea{
+  border-radius:0;
+  border:none;
+  background:0 0;
+  -webkit-appearance:none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-text-size-ajust:none;
+  }
 
 button{
   border-style: none;
