@@ -48,18 +48,6 @@ export default {
         this.todoItems = [];
     }
   },
-  // vue lifecycle
-  // https://vuejs.org/v2/guide/instance.html
-  // https://v3.vuejs.org/api/options-lifecycle-hooks.html
-  created(){
-        if(localStorage.length > 0){
-            for(let i = 0; i < localStorage.length ; i++){
-                if(localStorage.key(i) !== 'loglevel:webpack-dev-server'){
-                    this.todoItems.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
-                }
-            }
-        }
-  },
   components: {
     // 컴포넌트 태그명 : 컴포넌트 내용(파스칼케이스)
     TodoHeader,
