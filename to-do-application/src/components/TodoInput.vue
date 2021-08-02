@@ -48,7 +48,8 @@ export default {
         }
     },
     components: {
-        Modal: Modal
+        // 컴포넌트와 컴포넌트명이 동일하므로 축약
+        Modal
     }
 }
 </script>

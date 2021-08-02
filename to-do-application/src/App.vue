@@ -62,10 +62,10 @@ export default {
   },
   components: {
     // 컴포넌트 태그명 : 컴포넌트 내용(파스칼케이스)
-    'TodoHeader': TodoHeader,
-    'TodoInput': TodoInput,
-    'TodoList': TodoList,
-    'TodoFooter': TodoFooter,
+    TodoHeader,
+    TodoInput,
+    TodoList,
+    TodoFooter,
   }
 }
 
