@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-// Vue Àü¿ª ÇÃ·¯±×ÀÎ
+// Vue ì „ì—­ í”ŒëŸ¬ê·¸ì¸
 Vue.use(Vuex);
 
 const storage = {
@@ -26,5 +26,12 @@ export const store = new Vuex.Store({
     state: {
         headerText : 'To do it',
         todoItems: storage.fetch(),
+    },
+    mutations:{
+        addOneItem(state, todoItem){
+            const obj = {completed: false, item: todoItem};
+            localStorage.setItem(todoItem, JSON.stringify(obj));
+            state.push(obj);
+        },
     }
 })

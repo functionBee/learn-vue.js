@@ -3,7 +3,7 @@
     <!-- 스타일 가이드에서는 템플릿에서 케밥 기법을 권고 -->
     <TodoHeader></TodoHeader>
     <!-- <TodoInput v-on:하위컴포넌트에서 발생시킨 이벤트 이름 = "현재 컴포넌트의 메소드 명"></TodoInput> -->
-    <TodoInput v-on:addTodoItem = "addOneItem"></TodoInput>
+    <TodoInput></TodoInput>
     <!-- <TodoList v-bind: 내려 보낼 프롭스 속성 = "현재 위치의 컴포넌트 데이터 속성"></TodoList> -->
     <TodoList v-bind:propsdata="todoItems" v-on:removeItem="removeOneItem" v-on:toggleItem="toggleOneItem"></TodoList>
     <TodoFooter v-on:clearAll="clearAllItems"></TodoFooter>
@@ -23,15 +23,15 @@ export default {
       }
   },
   methods:{
-    addOneItem(todoItem){
-      const obj = {completed: false, item: todoItem};
-        // 저장 로직
-        localStorage.setItem(todoItem, JSON.stringify(obj));
-        // localStorage.setItem();
-        // Reference >> localStorage 
-        // https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
-        this.todoItems.push(obj);
-    },
+    // addOneItem(todoItem){
+    //   const obj = {completed: false, item: todoItem};
+    //     // 저장 로직
+    //     localStorage.setItem(todoItem, JSON.stringify(obj));
+    //     // localStorage.setItem();
+    //     // Reference >> localStorage 
+    //     // https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+    //     this.todoItems.push(obj);
+    // },
     removeOneItem(todoItem, index){
         localStorage.removeItem(todoItem.item);
         this.todoItems.splice(index, 1);
