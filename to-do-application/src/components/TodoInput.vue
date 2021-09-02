@@ -36,7 +36,7 @@ export default {
     methods:{
         addTodo(){
             if(this.newTodoItem !== ''){
-                const text = this.newTodoItem.trim();
+                const text = this.newTodoItem.trim(); // trim(); 입력된 값에 앞 뒤로 공백
                 // this.$emit('addTodoItem', this.newTodoItem)
                 this.$store.commit('addOneItem', text);
                 this.clearInput();

@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-// Vue 전역 플러그인
 Vue.use(Vuex);
 
 const storage = {
@@ -31,7 +30,11 @@ export const store = new Vuex.Store({
         addOneItem(state, todoItem){
             const obj = {completed: false, item: todoItem};
             localStorage.setItem(todoItem, JSON.stringify(obj));
-            state.push(obj);
+            state.todoItems.push(obj);
         },
+        removeOneItem(state, payload){
+            localStorage.removeItem(payload.todoItem.item);
+            state.todoItems.splice(payload.index, 1);
+        }
     }
 })
