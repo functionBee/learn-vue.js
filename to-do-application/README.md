@@ -114,7 +114,6 @@ methods:{
         this.$store.dispatch('fetchProductData');
     }
 }
-
 ```
 
 ## 왜 actions에 비동기 로직을 선언해야 하는가?
@@ -122,6 +121,36 @@ methods:{
 > state 값의 변화를 추적하기 어렵기 때문에 mutations 속성에는 동기 처리 로직만 넣어야 한다.
 
 
+## Helper 함수
+Store 에 있는 아래 4가지 속성들을 간편하게 코딩하는 방법
+
+- state ->  mapState
+- getters -> mapGetters
+- mutaions -> mapMutatoins
+- actions -> mapActions
+
+1. 헬퍼의 사용법
+: 헬퍼를 사용하고자 하는 vue 파일에서 아래와 같이 해당 헬퍼를 로딩
+
+```
+// App.vue
+import { mapState,  mapGetters, mapMutations, mapActions } from 'vuex'
+
+export default{
+    computed(){
+        ...mapState(['num']), /// ... 
+        ...mapGettes(['countedNum']),
+    },
+    methods: {
+        ...mapMutaions(['clickBtn]),
+        ...mapActions(['asyncClickBtn])
+    }
+}
+```
+
+
+
+## ES6 Spread 연산자 소개
 
 
 ---
