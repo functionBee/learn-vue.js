@@ -48,8 +48,8 @@ npm init nuxt-app [project-name]
 - Programming language: JavaScript 
 - Package manager: Npm
 - UI framework: None
-- Nuxt.js modules: (Press <space> to select, <a> to toggle all, <i> to invert selection)
-- Linting tools: ESLint, Prettier    
+- Nuxt.js modules: (Press `<space>` to select, `<a>` to toggle all, `<i>` to invert selection)
+- Linting tools: ESLint, Prettier 
 - Testing framework: None
 - Rendering mode: Universal (SSR / SSG)
 - Deployment target: Server (Node.js hosting)
