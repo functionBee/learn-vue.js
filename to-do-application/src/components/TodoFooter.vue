@@ -5,11 +5,13 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
 export default {
   methods:{
-    clearTodo(){
-      this.$store.$emit('clearAllItems');
-    }
+    ...mapMutations({
+      clearTodo: 'clearAllItems'
+    })
   }
 }
 </script>
@@ -31,5 +33,4 @@ export default {
   background: linear-gradient(to bottom, #6478fb, #8763fb);
   border-radius: 5px;
 }
-
 </style>
