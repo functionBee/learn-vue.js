@@ -24,6 +24,11 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
+---
+
+# Reference
+- [Object Spread Operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
+
 
 ---
 # Learn Vue.js
@@ -148,9 +153,65 @@ export default{
 }
 ```
 
+2. mapState
+Vuex 에 선언한 state 속성을 뷰 컴포넌트에 더 쉽게 연결해주는 헬퍼
+```
+// App.vue
+import { mapState } from 'vuex'
 
+computed(){
+    ...mapState('num')
+    //num() { return this.$store.state.num;}
+}
+
+// store.js
+state:{
+    num: 10
+}
+```
+```
+<p>{{ this.num }}</p>
+```
+
+3. mapGetters
+Vuex에 선언한 getters 속성을 뷰 컴포넌트에 더 수비게 연결해주는 헬퍼
+```
+// App.vue
+import { mapGetters } form 'vuex'
+
+computed(){
+    ...mapGettes(['reverseMessage')
+}
+
+// store.js
+getters: {
+    reverseMessage(state){
+        return state.msg.split('').reverse().join('');
+    }
+}
+```
+```
+<p>{{ this.reverseMessage }}</p>
+```
 
 ## ES6 Spread 연산자 소개
+ `...` 는 ES6의 [Object Spread Operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)!
+
+```
+let jee = {
+    filed: 'web',
+    lang: 'js'
+};
+
+let developer = {
+    nation: 'korea',
+    ... jee
+}
+
+console.log(developer);
+```
+
+
 
 
 ---
