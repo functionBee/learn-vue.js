@@ -12,6 +12,7 @@
 
 ## Reference
 - [Nuxt 공식 페이지](https://nuxtjs.org/)
+- [Nuxt.js 설치 안내문서](https://nuxtjs.org/docs/get-started/installation/)
 - [Nuxt 소개 - Cracking vue.js](https://joshua1988.github.io/vue-camp/nuxt/intro.html)
 - [인프런 타입스크립트 학습 로드맵](https://www.inflearn.com/roadmaps/387)
 - [SEO 가이드](https://developers.google.com/search/docs/beginner/seo-starter-guide?hl=ko)
@@ -57,7 +58,11 @@ npm init nuxt-app [project-name]
 - Continuous integration: None
 - Version control system: Git
 
-## 
+## 프로젝트 폴더 구조
+```
+# cmd
+tree "learn-nuxt"
+```
 
 -----
 ## 클라이언트 사이드 렌더링(CSR;Client Side Rendering)
