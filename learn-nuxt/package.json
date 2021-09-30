@@ -12,8 +12,8 @@
   },
   "dependencies": {
     "core-js": "^3.15.1",
-    "json-server": "^0.16.3",
-    "nuxt": "^2.15.7"
+    "nuxt": "^2.15.7",
+    "vue-axios": "^3.3.7"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",
