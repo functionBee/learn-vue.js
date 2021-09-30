@@ -57,12 +57,24 @@ npm init nuxt-app [project-name]
 - Deployment target: Server (Node.js hosting)
 - Development tools: jsconfig.json (Recommended for VS Code if you're not using typescript)
 - Continuous integration: None
-- Version control system: Git
+- Version control system: None
 
 ## 프로젝트 폴더 구조
 ```
 # cmd
 tree "learn-nuxt"
+```
+
+## nuxt-link 태그
+NuxtLink 태그는 기존의 <rounter-link> 태그와 동일한 기능
+
+```
+
+# 파스칼 케이스로 명명 예시
+<NuxtLink to="/">Home page</NuxtLink>
+<NuxtLink to="/main">main page</NuxtLink>
+<NuxtLink to="/product">product page</NuxtLink>
+
 ```
 
 -----
