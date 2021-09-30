@@ -1,69 +1,110 @@
-# learn-nuxt
+# Nuxt.js 시작하기
 
-## Build Setup
+## 개발환경
+- Chrome
+- Vue.js Dev Tools
+- Node.js
 
-```bash
-# install dependencies
-$ npm install
+## VSCode 플러그인 목록
+- 뷰 확장 플러그인 : Vetur
+- 뷰 코드 스니펫: Vue VSCode Snippets
+- 문법 검사 :  ESLint, Prettier, ES6 String HTML
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+## Reference
+- [Nuxt 공식 페이지](https://nuxtjs.org/)
+- [Nuxt.js 설치 안내문서](https://nuxtjs.org/docs/get-started/installation/)
+- [Nuxt 소개 - Cracking vue.js](https://joshua1988.github.io/vue-camp/nuxt/intro.html)
+- [인프런 타입스크립트 학습 로드맵](https://www.inflearn.com/roadmaps/387)
+- [SEO 가이드](https://developers.google.com/search/docs/beginner/seo-starter-guide?hl=ko)
+- [Vue.js Plugin 문서](https://joshua1988.github.io/vue-camp/reuse/plugins.html)
+- 
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+## Nuxt.js
+> 서버 사이드 렌더링 프레임워크
+웹 어플리케이션을 제작할때 뷰엑스, 라우터, Axios 와 같은 라이브러리들을 미리 구성하여 싱글 페이지 애플리케이션, 서버 사이드 렌더링, 정적 웹 사이트르르 쉽게 제작할 수 있도록 도움
 
-# generate static project
-$ npm run generate
+## Nuxt 의 장점
+- 검색 엔진 최적화
+- 초기 프로젝트 설정 비용 감소와 생산성 향상
+    + ESLint, Prettier
+    + 라우터, 스토어 등의 라이브러리 설치 및 설정 파일 필요X
+    + 파일 기반의 라우팅 방식. 설정 파일 자동생성
+- 페이지 로딩 속도와 사용자 경험 향상
+    + 브라우저가 하는일을 서버에 나눠준다.
+    + 모르면 지나칠 수 있는 코드 스플리팅이 기본으로 설정
+
+## Nuxt 특징
+- 서버 사이드 렌더링
+- 규격화된 폴더구조
+- pages 폴더 기반의 자동 라우팅 설정
+- 비동기 데이터 요청 속성
+- ES6/ES56+ 변환
+
+## 프로젝트 생성 방법
+```
+npm init nuxt-app [project-name]
 ```
 
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+*설정 내용*
+- Programming language: JavaScript 
+- Package manager: Npm
+- UI framework: None
+- Nuxt.js modules: (Press `<space>` to select, `<a>` to toggle all, `<i>` to invert selection)
+- Linting tools: ESLint, Prettier 
+- Testing framework: None
+- Rendering mode: Universal (SSR / SSG)
+- Deployment target: Server (Node.js hosting)
+- Development tools: jsconfig.json (Recommended for VS Code if you're not using typescript)
+- Continuous integration: None
+- Version control system: Git
 
-## Special Directories
+## 프로젝트 폴더 구조
+```
+# cmd
+tree "learn-nuxt"
+```
 
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
+-----
+## 클라이언트 사이드 렌더링(CSR;Client Side Rendering)
 
-### `assets`
+```
+// src/main.js
+import Vue from "vue";
+import App from "./App.vue";
 
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
+new Vue({
+  render: (h) => h(App),
+}).$mount("#app");
+```
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
+뷰의 인스턴스는 아래 index.html 파일의 app 아이디를 갖는 태그에 부착됨
+* instance mounting(인스턴스가 부착되는 동작)
 
-### `components`
+```
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <!-- ... -->
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
+```
+## 서버 사이드 렌더링(SSR; Server Side Rendering)
+웹 페이지의 내용을 서버에서 모두 작성해서 클라이언트(브라우저)로 보낸 뒤 화면 그리는 기법
 
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
+## 클라이언트 사이드 렌더링과 서버 사이드 렌더링의 차이점
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
-
-### `layouts`
-
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
+*참고 사이트*
+- [구글 커리어 웹 사이트](https://careers.google.com/)
+- [캡틴 판교 웹 블로그](https://joshua1988.github.io/)
 
 
-### `pages`
-
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
-
-### `plugins`
-
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
-
-### `static`
-
-This directory contains your static files. Each file inside this directory is mapped to `/`.
-
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
-
-### `store`
-
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+## 왜 서버 사이드 렌더링을 사용해야 할까?
+가장 큰 목적은 *검색 엔진 최적화(SEO)*, *빠른 페이지 렌더링* !
