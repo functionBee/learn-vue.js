@@ -1,7 +1,15 @@
 <template>
-  <Tutorial/>
+  <div>
+    <p>Start Nuxt.js</p>
+  </div>
 </template>
 
 <script>
-export default {}
+export default {
+
+}
 </script>
+
+<style>
+
+</style>

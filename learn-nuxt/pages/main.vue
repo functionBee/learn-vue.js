@@ -1,13 +1,10 @@
 <template>
-  <div>
-      <h1>main page</h1>
-  </div>
+    <div>
+        <p>this is a main page </p>
+    </div>
 </template>
 
 <script>
-export default {
-
-}
 </script>
 
 <style>
