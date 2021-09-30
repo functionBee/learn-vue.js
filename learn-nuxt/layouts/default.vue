@@ -5,10 +5,6 @@
             <NuxtLink to="/">Home page</NuxtLink>
             <NuxtLink to="/main">main page</NuxtLink>
             <NuxtLink to="/product">product page</NuxtLink>
-            <!-- 
-                
-             -->
-
         </header>
         <Nuxt/>
     </div>

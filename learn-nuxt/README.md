@@ -17,7 +17,7 @@
 - [인프런 타입스크립트 학습 로드맵](https://www.inflearn.com/roadmaps/387)
 - [SEO 가이드](https://developers.google.com/search/docs/beginner/seo-starter-guide?hl=ko)
 - [Vue.js Plugin 문서](https://joshua1988.github.io/vue-camp/reuse/plugins.html)
-- 
+- [Learn-nuxt 리포지토리](https://github.com/joshua1988/learn-nuxt/tree/master/backend)
 
 ## Nuxt.js
 > 서버 사이드 렌더링 프레임워크
@@ -76,6 +76,18 @@ NuxtLink 태그는 기존의 <rounter-link> 태그와 동일한 기능
 <NuxtLink to="/product">product page</NuxtLink>
 
 ```
+
+## Nuxt의 데이터 호출 방식과 API 연동
+
+1. ???????? API ???? ?????
+2. JSON Server 
+3. axios 설치 및 API 호출
+4. 서버 포트 변경 및 받아노 데이터 표시
+5. Nuxt 데이터 호출 방식 안내
+6. asyncData 적용 및 ESLint 규칙 확인
+7. asyncData 속성 안내 및 코드 수정
+8. asyncData 속성 주의사항
+9. asyncData 속성 정리
 
 -----
 ## 클라이언트 사이드 렌더링(CSR;Client Side Rendering)
