@@ -21,6 +21,9 @@
 - [JSONplaceholder](https://jsonplaceholder.typicode.com/)
 - [JSONServer](https://github.com/typicode/json-server)
 - [Async await 문법](https://joshua1988.github.io/web-development/javascript/js-async-await/)
+- [서버 설정 변경 안내 문서](https://nuxtjs.org/docs/features/configuration/#edit-host-and-port)
+- [HMR(Hot Module REplacement) 안내문서](https://joshua1988.github.io/webpack-guide/devtools/hot-module-replacement.html)
+
 
 ## Nuxt.js
 > 서버 사이드 렌더링 프레임워크
@@ -102,8 +105,16 @@ export default {
 
 2. 서버 포트 변경 및 받아서 데이터 표시
 
-> 기본 포트 변경 방법
+> 포트 변경 방법
 ```
+# nuxt.config.js
+
+  // server setup
+  server: {
+    port: 5000,  // 본인이 지정한 포트로 변경됨
+  }
+
+
 ```
 
 3. Nuxt 데이터 호출 방식 안내
