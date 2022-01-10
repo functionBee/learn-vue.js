@@ -56,7 +56,7 @@ digit을 사용하여 `holabee/bundler-webpack` 레파지토리 기본 개발 �
             },
             {
                 test: /\.s?css$/,
-                use: ['vue-style-loader', 'style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+                use: ['vue-style-loader', 'style-loader', 'css-loader', , 'sass-loader', 'postcss-loader'],
             },
         ];
     },
