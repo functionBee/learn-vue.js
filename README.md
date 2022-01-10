@@ -1,7 +1,7 @@
 # VueJS
 
 ## [To do App](https://github.com/holabee/LearnVueJS/tree/main/to-do-application)
-Vue.js ÇĞ½ÀÀ» ÅëÇØ To do application ±¸Çö
+Vue.js í•™ìŠµì„ í†µí•´ To do application êµ¬í˜„
 
 ## [Nuxt.js](https://github.com/holabee/LearnVueJS/tree/main/learn-nuxt)
-Nuxt.js¿¡ ´ëÇÑ °­ÀÇ ÇĞ½À
+Nuxt.jsì— ëŒ€í•œ ê°•ì˜ í•™ìŠµ
