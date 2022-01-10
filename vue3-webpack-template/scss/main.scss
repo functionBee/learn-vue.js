@@ -1,0 +1,39 @@
+$color--bg : #B30822;
+$color--text : #fff;
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+    background-color: $color--bg;
+
+    h1{
+        font-size: 30px;
+        font-weight: bold;
+        color: $color--text;
+    }
+    
+    img{
+        vertical-align: top;
+    }
+}
+
+.img_box{
+    position: relative;
+    overflow: hidden;
+    width: 300px;
+    height: 300px;
+    margin: 50px auto 0;
+    border: 5px solid #fff;
+    border-radius: 50%;   
+
+    img{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: auto;
+        transform: translate(-50%, -50%) scale(0.65);
+    }
+}
