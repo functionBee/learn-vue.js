@@ -117,7 +117,7 @@ module.exports = {
 ```bash
 
 # 패키지 설치
-$ npm i -D sass sass-loader
+$ npm i -D sass sass-loader node-sass
 
 ```
 
@@ -133,8 +133,8 @@ module.exports = {
         rules: [
             {
                 test: /\.s?css$/,
-                use: ['style-loader', 'css-loader', 'sass-loader']
-            }
+                use: ['vue-style-loader', 'style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+            },
         ]
     },
 };
@@ -226,6 +226,63 @@ module.exports = {
 
 ```
 
+### :seedling: 6. file-loader 패키지 설치
+
+: 특정한 파일들을 읽어서 브라우저에 출력할 수 있는 웹팩의 loader
+
+```bash
+
+$ yarn add --dev file-loader
+# = npm i -D file-loader
+
+```
+
+```javascript
+// webpack.config.js
+const path = require('path');
+
+module.exports = {
+    // .js, .vue 확장자를 따로 명시하지 않아도 문제 없이 동작할 수 있도록 설정
+    resolve: {
+        extensions: ['.js', '.vue'],
+        // alias(경로별칭)
+        alias: {
+            '~': path.resolve(__dirname, 'src'),
+            assets: path.resolve(__dirname, 'src/assets'),
+        },
+    },
+    module: {
+        rules: [
+            {
+                test: /\.(png|jpe?g|gif|webp)$/,
+                use: ['file-loader'],
+            },
+        ],
+    },
+};
+```
+
+### :seedling: 7. eslint 패키지 설치
+
+```bash
+
+$ yarn add --dev eslint eslint-plugin-vue babel-eslint
+# = npm i -D eslint
+
+```
+
+`.eslintrc.js` 파일 생성
+
+```javascript
+// .eslintrc.js
+module.exports = {
+    env: {},
+    extends: [],
+    parserOptions: {},
+    rules: {},
+};
+```
+
 ## Reference
 
 -   [Webpack](https://webpack.js.org/)
@@ -234,3 +291,5 @@ module.exports = {
 -   [CopyWebpackPlugin](https://webpack.js.org/plugins/copy-webpack-plugin/)
 -   [css-loader](https://yamoo9.gitbook.io/webpack/webpack/webpack-loaders/css-loader)
 -   [babel-loader](https://github.com/babel/babel-loader)
+-   [file-loader](https://vue-loader.vuejs.org/guide/asset-url.html)
+-   [eslint](https://eslint.vuejs.org/user-guide/)
