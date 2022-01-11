@@ -1,3 +1,3 @@
 <template>
-    <img src="~assets/profile.jpg" alt="beee" />
+  <img src="~assets/profile.jpg" alt="beee" />
 </template>

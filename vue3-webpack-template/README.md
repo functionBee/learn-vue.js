@@ -248,7 +248,7 @@ module.exports = {
         // alias(경로별칭)
         alias: {
             '~': path.resolve(__dirname, 'src'),
-            assets: path.resolve(__dirname, 'src/assets'),
+            'assets': path.resolve(__dirname, 'src/assets'),
         },
     },
     module: {
@@ -262,7 +262,7 @@ module.exports = {
 };
 ```
 
-### :seedling: 7. eslint 패키지 설치
+### :seedling: 7. Eslint 패키지 설치
 
 ```bash
 
@@ -313,3 +313,4 @@ module.exports = {
 -   [babel-loader](https://github.com/babel/babel-loader)
 -   [file-loader](https://vue-loader.vuejs.org/guide/asset-url.html)
 -   [eslint](https://eslint.vuejs.org/user-guide/)
+-   [eslint rules](https://eslint.org/docs/rules/)
