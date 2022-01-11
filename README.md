@@ -26,7 +26,7 @@ $ vue create 프로젝트명
 
 ### 2.2 [Vue3-webpack-template](https://github.com/holabee/LearnVueJS/tree/main/vue3-webpack-template)
 
-digit을 사용하여 `holabee/bundler-webpack` 레파지토리 기본 개발 프로젝트 환경을 가져와 새로운 프로젝트 생성
+digit을 사용하여 `holabee/bundler-webpack` 레파지토리 기본 개발 프로젝트 환경 구성을(ex. webpack bundler, packages)을 가져와 Vue(3)에서의 기본 프로젝트 환경 템플릿 생성
 
 **새로운 생성 방법**
 
