@@ -10,7 +10,7 @@ module.exports = {
         // alias(경로별칭)
         alias: {
             '~': path.resolve(__dirname, 'src'),
-            assets: path.resolve(__dirname, 'src/assets'),
+            'assets': path.resolve(__dirname, 'src/assets'),
         },
     },
     entry: './src/main.js',

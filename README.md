@@ -30,6 +30,11 @@ digit을 사용하여 `holabee/bundler-webpack` 레파지토리 기본 개발 �
 
 **새로운 생성 방법**
 
+-   `vue` 설치
+    ```bash
+        yarn add vue@next
+        # npm i vue@next
+    ```
 -   js/main.js 파일 삭제
 -   src 디렉토리 생성 후 `App.vue`, `main.js` 파일 생성
 
@@ -41,16 +46,11 @@ digit을 사용하여 `holabee/bundler-webpack` 레파지토리 기본 개발 �
 
     ```
 
--   `vue` 패키지 설치
-    ```bash
-    yarn add vue@next
-    # = npm i vue@next
-    ```
 -   기타 패키지 추가 설치
 
     ```bash
 
-    yarn add --dev vue-loader@next vue-style-loader @vue/compiler-sfc
+    yarn add -D vue-loader@next vue-style-loader @vue/compiler-sfc
     # = npm i -D vue-loader@next vue-style-loader @vue/compiler-sfc
 
     ```
@@ -58,21 +58,24 @@ digit을 사용하여 `holabee/bundler-webpack` 레파지토리 기본 개발 �
     ```javascript
     // webpack.config.js
     const { VueLoaderPlugin } = require('vue-loader');
-    module: {
-        rules: [
-            {
-                test: /\.vue$/,
-                use: 'vue-loader',
-            },
-            {
-                test: /\.s?css$/,
-                use: ['vue-style-loader', 'style-loader', 'css-loader', , 'sass-loader', 'postcss-loader'],
-            },
-        ];
-    },
-    plugins: [
-        new VueLoaderPlugin(),
-    ],
+    module.exports = {
+        entry: './src/main.js',
+        module: {
+            rules: [
+                {
+                    test: /\.vue$/,
+                    use: 'vue-loader',
+                },
+                {
+                    test: /\.s?css$/,
+                    use: ['vue-style-loader', 'style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+                },
+            ];
+        },
+        plugins: [
+            new VueLoaderPlugin(),
+        ],
+    }
     ```
 
 # 3. Reference
