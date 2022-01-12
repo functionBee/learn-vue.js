@@ -30,6 +30,33 @@ Vue.createApp({})
 ![라이프사이클 다이어그램](https://v3.ko.vuejs.org/images/lifecycle.svg)
 
 
+```javascript
+
+export default {
+  data () {
+    return {
+      count: 2
+    }
+  },
+  beforeCreate () {
+    console.log('beforeCreate!', this.count)
+  },
+  created () {
+    console.log('Created!', this.count)
+    console.log(document.querySelector('h1'))
+  },
+  beforeMount () {
+    console.log('beforeMount!')
+    console.log(document.querySelector('h1'))
+  },
+  mounted () {
+    console.log('Mounted!')
+    console.log(document.querySelector('h1'))
+  }
+}
+
+```
+
 ### Reference
 - [Vue.js](https://cli.vuejs.org/config/)
 - [Vue.js Guide](https://v3.ko.vuejs.org/guide/introduction.html)
