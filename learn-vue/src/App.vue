@@ -1,30 +1,9 @@
 <template>
   <h1 class="logo"><img src="./assets/logo.png" alt="HolaBee logo" /></h1>
-  <p class="count-text">{{ count }}</p>
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-      count: 2
-    }
-  },
-  beforeCreate () {
-    console.log('beforeCreate!', this.count)
-  },
-  created () {
-    console.log('Created!', this.count)
-    console.log(document.querySelector('h1'))
-  },
-  beforeMount () {
-    console.log('beforeMount!')
-    console.log(document.querySelector('h1'))
-  },
-  mounted () {
-    console.log('Mounted!')
-    console.log(document.querySelector('h1'))
-  }
 }
 </script>
 
