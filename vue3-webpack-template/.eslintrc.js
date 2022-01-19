@@ -3,7 +3,6 @@ module.exports = {
     browser: true,
     node: true,
   },
-
   extends: [
     // vue
     // 'plugin:vue/vue3-essential', // LV1
@@ -13,12 +12,10 @@ module.exports = {
     // javascript
     "eslint:recommended",
   ],
-
   parserOptions: {
     parser: "babel-eslint",
     ecmaVersion: 2020,
   },
-
   rules: {
     "vue/html-closing-bracket-newline": [
       "error",
@@ -42,9 +39,7 @@ module.exports = {
     "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
   },
-
   root: true,
-
   extends: [
     "plugin:vue/vue3-strongly-recommended",
     "eslint:recommended",
